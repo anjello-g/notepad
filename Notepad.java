@@ -23,17 +23,17 @@ public class Notepad extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
 
-        // Create the text area
+        // text area
         textArea = new JTextArea();
         textArea.setFont(new Font("Arial", Font.PLAIN, 14));
         textArea.setBorder(new EmptyBorder(10, 10, 10, 10));
         JScrollPane scrollPane = new JScrollPane(textArea);
 
-        // Set the icon
+        // icon
         ImageIcon icon = new ImageIcon(getClass().getResource("notepad.png")); // Replace with your icon file path
         setIconImage(icon.getImage());
 
-        // Create the font style combo box
+        // font style
         fontComboBox = new JComboBox<>(GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames());
         fontComboBox.setFont(new Font("Arial", Font.PLAIN, 14));
         fontComboBox.addActionListener(new ActionListener() {
@@ -43,7 +43,7 @@ public class Notepad extends JFrame {
             }
         });
 
-        // Create the font size spinner
+        // font size
         fontSizeSpinner = new JSpinner(new SpinnerNumberModel(14, 8, 72, 1));
         fontSizeSpinner.setFont(new Font("Arial", Font.PLAIN, 14));
         fontSizeSpinner.addChangeListener(new ChangeListener() {
@@ -53,7 +53,7 @@ public class Notepad extends JFrame {
             }
         });
 
-        // Create the color button
+        // color
         colorButton = new JButton("Color");
         colorButton.setFont(new Font("Arial", Font.PLAIN, 14));
         colorButton.addActionListener(new ActionListener() {
@@ -66,7 +66,7 @@ public class Notepad extends JFrame {
             }
         });
 
-        // Create the save button
+        // save button
         saveTxtButton = new JButton("Save as TXT");
         saveTxtButton.setFont(new Font("Arial", Font.PLAIN, 14));
         saveTxtButton.addActionListener(new ActionListener() {
@@ -76,7 +76,7 @@ public class Notepad extends JFrame {
             }
         });
 
-        // Create the toolbar panel
+        // toolbar
         JPanel toolbarPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
         toolbarPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
         toolbarPanel.add(new JLabel("Font:"));
@@ -86,7 +86,7 @@ public class Notepad extends JFrame {
         toolbarPanel.add(colorButton);
         toolbarPanel.add(saveTxtButton);
 
-        // Add components to the frame
+        // components to frame
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(toolbarPanel, BorderLayout.NORTH);
         getContentPane().add(scrollPane, BorderLayout.CENTER);
